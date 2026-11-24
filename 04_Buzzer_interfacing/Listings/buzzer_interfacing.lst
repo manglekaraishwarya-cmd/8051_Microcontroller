@@ -1,0 +1,51 @@
+C51 COMPILER V9.60.7.0   BUZZER_INTERFACING                                                11/24/2026 16:50:52 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE BUZZER_INTERFACING
+OBJECT MODULE PLACED IN .\Objects\buzzer_interfacing.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE buzzer_interfacing.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.
+                    -\Listings\buzzer_interfacing.lst) TABS(2) OBJECT(.\Objects\buzzer_interfacing.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          sbit BUZZER = P2^0;
+   4          
+   5          void delay(void)
+   6          {
+   7   1          int i, j;
+   8   1      
+   9   1          for(i = 0; i < 100; i++)
+  10   1          {
+  11   2              for(j = 0; j < 1000; j++)
+  12   2              {
+  13   3              }
+  14   2          }
+  15   1      }
+  16          
+  17          void main(void)
+  18          {
+  19   1          while(1)
+  20   1          {
+  21   2              BUZZER = 1;
+  22   2              delay();
+  23   2      
+  24   2              BUZZER = 0;
+  25   2              delay();
+  26   2          }
+  27   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     41    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
