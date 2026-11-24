@@ -1,0 +1,83 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    11/24/2026  15:09:54  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\03_Push_button_interface_with_8051.obj TO .\Objects\03_Push_button_interface_with_
+>> 8051 PRINT (.\Listings\03_Push_button_interface_with_8051.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\03_Push_button_interface_with_8051.obj (03_PUSH_BUTTON_INTERFACE_WITH_8051)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\03_Push_button_interface_with_8051 (03_PUSH_BUTTON_INTERFACE_WITH_8051)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     000DH     UNIT         ?PR?MAIN?03_PUSH_BUTTON_INTERFACE_WITH_8051
+            CODE    080DH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\03_Push_button_interface_with_8051 (03_PUSH_BUTTON_INTERFACE_WITH_8051)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?03_PUSH_BUTTON_INTERFACE_WIT...
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\03_Push_button_interface_with_8051 (03_PUSH_BUTTON_INTERFACE_WITH_8051)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        03_PUSH_BUTTON_INTERFACE_WITH_8051
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        P3
+  C:0800H         PUBLIC        main
+  B:00B0H.2       PUBLIC        SWITCH
+  B:00A0H.0       PUBLIC        LED
+  -------         PROC          MAIN
+  C:0800H         LINE#         7
+  C:0800H         LINE#         8
+  C:0800H         LINE#         9
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  11/24/2026  15:09:54  PAGE 2
+
+
+  C:0802H         LINE#         11
+  C:0802H         LINE#         12
+  C:0802H         LINE#         13
+  C:0805H         LINE#         14
+  C:0805H         LINE#         15
+  C:0807H         LINE#         16
+  C:0809H         LINE#         18
+  C:0809H         LINE#         19
+  C:080BH         LINE#         20
+  C:080BH         LINE#         21
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        03_PUSH_BUTTON_INTERFACE_WITH_8051
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 000DH BYTE ( 0%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=28
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
