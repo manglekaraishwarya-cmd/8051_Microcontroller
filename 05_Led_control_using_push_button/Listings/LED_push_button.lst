@@ -1,0 +1,45 @@
+C51 COMPILER V9.60.7.0   LED_PUSH_BUTTON                                                   11/25/2026 13:11:18 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE LED_PUSH_BUTTON
+OBJECT MODULE PLACED IN .\Objects\LED_push_button.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE LED_push_button.C OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Li
+                    -stings\LED_push_button.lst) TABS(2) OBJECT(.\Objects\LED_push_button.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          sbit LED = P2^0;
+   4          sbit SWITCH = P3^2;
+   5          
+   6          void main(void)
+   7          {
+   8   1          SWITCH = 1;
+   9   1      
+  10   1          while(1)
+  11   1          {
+  12   2              if(SWITCH == 0)
+  13   2              {
+  14   3                  LED = 1;
+  15   3              }
+  16   2              else
+  17   2              {
+  18   3                  LED = 0;
+  19   3              }
+  20   2          }
+  21   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     13    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
