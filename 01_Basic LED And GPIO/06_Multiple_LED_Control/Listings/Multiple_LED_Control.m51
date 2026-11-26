@@ -1,0 +1,100 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    11/26/2026  14:50:25  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Multiple_LED_Control.obj TO .\Objects\Multiple_LED_Control PRINT (.\Listings\Multi
+>> ple_LED_Control.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Multiple_LED_Control.obj (MULTIPLE_LED_CONTROL)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\Multiple_LED_Control (MULTIPLE_LED_CONTROL)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0026H     UNIT         ?PR?MAIN?MULTIPLE_LED_CONTROL
+            CODE    0826H     001DH     UNIT         ?PR?DELAY?MULTIPLE_LED_CONTROL
+            CODE    0843H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Multiple_LED_Control (MULTIPLE_LED_CONTROL)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?MULTIPLE_LED_CONTROL
+
+?PR?MAIN?MULTIPLE_LED_CONTROL
+  +--> ?PR?DELAY?MULTIPLE_LED_CONTROL
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Multiple_LED_Control (MULTIPLE_LED_CONTROL)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MULTIPLE_LED_CONTROL
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0826H         PUBLIC        delay
+  C:0800H         PUBLIC        main
+  -------         PROC          DELAY
+  -------         DO            
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  11/26/2026  14:50:25  PAGE 2
+
+
+  D:0006H         SYMBOL        i
+  D:0004H         SYMBOL        j
+  -------         ENDDO         
+  C:0826H         LINE#         3
+  C:0826H         LINE#         4
+  C:0826H         LINE#         7
+  C:0829H         LINE#         8
+  C:0842H         LINE#         9
+  -------         ENDPROC       DELAY
+  -------         PROC          MAIN
+  C:0800H         LINE#         11
+  C:0800H         LINE#         12
+  C:0800H         LINE#         13
+  C:0800H         LINE#         14
+  C:0800H         LINE#         15
+  C:0803H         LINE#         16
+  C:0806H         LINE#         18
+  C:0809H         LINE#         19
+  C:080CH         LINE#         21
+  C:080FH         LINE#         22
+  C:0812H         LINE#         24
+  C:0815H         LINE#         25
+  C:0818H         LINE#         27
+  C:081BH         LINE#         28
+  C:081EH         LINE#         30
+  C:0821H         LINE#         31
+  C:0824H         LINE#         32
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MULTIPLE_LED_CONTROL
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0043H BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=82
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
