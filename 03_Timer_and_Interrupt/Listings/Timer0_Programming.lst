@@ -1,0 +1,58 @@
+C51 COMPILER V9.60.7.0   TIMER0_PROGRAMMING                                                11/27/2026 22:57:44 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TIMER0_PROGRAMMING
+OBJECT MODULE PLACED IN .\Objects\Timer0_Programming.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Timer0_Programming.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.
+                    -\Listings\Timer0_Programming.lst) TABS(2) OBJECT(.\Objects\Timer0_Programming.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          sbit LED = P2^0;
+   4          
+   5          void Timer0_Delay(void)
+   6          {
+   7   1          unsigned int i;
+   8   1      
+   9   1          for(i = 0; i < 50; i++)
+  10   1          {
+  11   2              TMOD = 0x01;
+  12   2      
+  13   2              TH0 = 0x4C;
+  14   2              TL0 = 0x00;
+  15   2      
+  16   2              TF0 = 0;
+  17   2              TR0 = 1;
+  18   2      
+  19   2              while(TF0 == 0);
+  20   2      
+  21   2              TR0 = 0;
+  22   2              TF0 = 0;
+  23   2          }
+  24   1      }
+  25          
+  26          void main(void)
+  27          {
+  28   1          while(1)
+  29   1          {
+  30   2              LED = ~LED;
+  31   2      
+  32   2              Timer0_Delay();
+  33   2          }
+  34   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     42    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
