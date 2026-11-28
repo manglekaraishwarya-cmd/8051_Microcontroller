@@ -1,0 +1,132 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    11/28/2026  21:15:57  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\Timer1_Programming.obj TO .\Objects\Timer1_Programming PRINT (.\Listings\Timer1_Pr
+>> ogramming.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\Timer1_Programming.obj (TIMER1_PROGRAMMING)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\Timer1_Programming (TIMER1_PROGRAMMING)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0012H     UNIT         ?PR?TIMER1_DELAY_50MS?TIMER1_PROGRAMMING
+            CODE    0812H     0011H     UNIT         ?PR?MAIN?TIMER1_PROGRAMMING
+            CODE    0823H     000DH     UNIT         ?PR?TIMER1_INIT?TIMER1_PROGRAMMING
+            CODE    0830H     000CH     UNIT         ?C_C51STARTUP
+            CODE    083CH     000AH     UNIT         ?PR?DELAY_500MS?TIMER1_PROGRAMMING
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\Timer1_Programming (TIMER1_PROGRAMMING)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?TIMER1_PROGRAMMING
+
+?PR?MAIN?TIMER1_PROGRAMMING
+  +--> ?PR?TIMER1_INIT?TIMER1_PROGRAMMING
+  +--> ?PR?DELAY_500MS?TIMER1_PROGRAMMING
+
+?PR?DELAY_500MS?TIMER1_PROGRAMMING
+  +--> ?PR?TIMER1_DELAY_50MS?TIMER1_PROGRAMMING
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\Timer1_Programming (TIMER1_PROGRAMMING)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        TIMER1_PROGRAMMING
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  11/28/2026  21:15:57  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0812H         PUBLIC        main
+  C:0823H         PUBLIC        Timer1_Init
+  C:0800H         PUBLIC        Timer1_Delay_50ms
+  D:0089H         PUBLIC        TMOD
+  C:083CH         PUBLIC        Delay_500ms
+  B:0088H.7       PUBLIC        TF1
+  D:008DH         PUBLIC        TH1
+  D:008BH         PUBLIC        TL1
+  B:00A0H.0       PUBLIC        LED
+  B:0088H.6       PUBLIC        TR1
+  -------         PROC          MAIN
+  C:0812H         LINE#         9
+  C:0812H         LINE#         10
+  C:0812H         LINE#         11
+  C:0814H         LINE#         13
+  C:0817H         LINE#         15
+  C:0817H         LINE#         16
+  C:0817H         LINE#         17
+  C:0819H         LINE#         18
+  C:081CH         LINE#         19
+  C:081EH         LINE#         20
+  C:0821H         LINE#         21
+  -------         ENDPROC       MAIN
+  -------         PROC          TIMER1_INIT
+  C:0823H         LINE#         24
+  C:0823H         LINE#         25
+  C:0823H         LINE#         26
+  C:082BH         LINE#         29
+  C:082DH         LINE#         30
+  C:082FH         LINE#         31
+  -------         ENDPROC       TIMER1_INIT
+  -------         PROC          TIMER1_DELAY_50MS
+  C:0800H         LINE#         32
+  C:0800H         LINE#         33
+  C:0800H         LINE#         34
+  C:0803H         LINE#         35
+  C:0806H         LINE#         37
+  C:0808H         LINE#         38
+  C:080AH         LINE#         40
+  C:080DH         LINE#         41
+  C:080FH         LINE#         44
+  C:0811H         LINE#         45
+  -------         ENDPROC       TIMER1_DELAY_50MS
+  -------         PROC          DELAY_500MS
+  -------         DO            
+  D:0007H         SYMBOL        i
+  -------         ENDDO         
+  C:083CH         LINE#         48
+  C:083CH         LINE#         49
+  C:083CH         LINE#         52
+  C:083EH         LINE#         53
+  C:083EH         LINE#         54
+  C:0841H         LINE#         55
+  C:0845H         LINE#         56
+  -------         ENDPROC       DELAY_500MS
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  11/28/2026  21:15:57  PAGE 3
+
+
+  -------         ENDMOD        TIMER1_PROGRAMMING
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 003AH BYTE ( 2%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=73
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

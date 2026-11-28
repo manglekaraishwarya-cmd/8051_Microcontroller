@@ -1,0 +1,82 @@
+C51 COMPILER V9.60.7.0   TIMER1_PROGRAMMING                                                11/28/2026 21:15:57 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE TIMER1_PROGRAMMING
+OBJECT MODULE PLACED IN .\Objects\Timer1_Programming.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Timer1_Programming.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.
+                    -\Listings\Timer1_Programming.lst) TABS(2) OBJECT(.\Objects\Timer1_Programming.obj)
+
+line level    source
+
+   1          
+   2          #include <reg51.h>
+   3          sbit LED = P2^0;
+   4          
+   5          void Timer1_Init(void);
+   6          void Timer1_Delay_50ms(void);
+   7          void Delay_500ms(void);
+   8          
+   9          void main(void)
+  10          {
+  11   1          LED = 0;
+  12   1      
+  13   1          Timer1_Init();
+  14   1      
+  15   1          while(1)
+  16   1          {
+  17   2              LED = 1;
+  18   2              Delay_500ms();
+  19   2              LED = 0;
+  20   2              Delay_500ms();
+  21   2          }
+  22   1      }
+  23          
+  24          void Timer1_Init(void)
+  25          {
+  26   1          TMOD = (TMOD & 0x0F) | 0x10;
+  27   1      
+  28   1          // Timer 1 Mode 1 (16-bit)
+  29   1          TR1 = 0;
+  30   1          TF1 = 0;
+  31   1      }
+  32          void Timer1_Delay_50ms(void)
+  33          {
+  34   1          TH1 = 0x4C;
+  35   1          TL1 = 0x00;
+  36   1      
+  37   1          TF1 = 0;
+  38   1          TR1 = 1;
+  39   1      
+  40   1          while(TF1 == 0);
+  41   1          TR1 = 0;
+  42   1      
+  43   1          
+  44   1          TF1 = 0;
+  45   1      }
+  46          
+  47          
+  48          void Delay_500ms(void)
+  49          {
+  50   1          unsigned char i;
+  51   1      
+  52   1          for(i = 0; i < 10; i++)
+  53   1          {
+  54   2              Timer1_Delay_50ms();
+C51 COMPILER V9.60.7.0   TIMER1_PROGRAMMING                                                11/28/2026 21:15:57 PAGE 2   
+
+  55   2          }
+  56   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     58    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
